@@ -77,12 +77,12 @@ class _inicioState extends State<inicio> {
   }
 
 //creacion funcion que llama login post api
-
+//probando aun
   Future<void> login() async {
     if (passController.text.isNotEmpty && emailController.text.isNotEmpty) {
       var response = await http.post(
           Uri.parse(
-              "https://api.sebastian.cl/classroom/v1/authentication/login"),
+              "https://api.sebastian.cl/classroom/swagger-ui/index.html#/authentication-rest/login"),
           body: ({
             'email': emailController.text,
             'contrasena': passController.text
@@ -100,3 +100,7 @@ class _inicioState extends State<inicio> {
     }
   }
 }
+
+//segunda prueba
+
+String url = "https://api.sebastian.cl/classroom/swagger-ui/index.html";
