@@ -1,0 +1,39 @@
+{
+    "project_info": {
+      "project_number": "1062053139744",
+      "project_id": "cpyd-7077b",
+      "storage_bucket": "cpyd-7077b.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:1062053139744:android:22655ef967936e6f45b345",
+          "android_client_info": {
+            "package_name": "com.example.appcpyd"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "1062053139744-a2se96l9sc4hnit5sc3q4ovuctlrnd77.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyAgx2QKtgQvP8RdZLkqUiNcyfMQPfXVFlA"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "1062053139744-a2se96l9sc4hnit5sc3q4ovuctlrnd77.apps.googleusercontent.com",
+                "client_type": 3
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
