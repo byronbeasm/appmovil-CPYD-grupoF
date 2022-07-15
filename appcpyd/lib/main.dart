@@ -1,7 +1,10 @@
 import 'package:appcpyd/homepage.dart';
+import 'package:appcpyd/routes/routes.dart';
+import 'package:appcpyd/vistas/loginalumno/controllers/lcontroller.dart';
 import 'package:appcpyd/vistas/loginalumno/l_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 //import 'package:http/http.dart' as http;
 //import 'package:flutter/services.dart';
 
