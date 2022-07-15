@@ -12,8 +12,11 @@ class logincontroller extends GetxController {
     try {
       login.value = await logind.login();
       url.value = login.value.redirectUrl!;
-      Get.offAllNamed('/loginwvs');
+      print('url');
+      print(url.value);
+      //Get.offAllNamed('/loginwvs');
     } catch (e) {
+      print('error');
       print(e);
     }
   }
