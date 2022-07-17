@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
-class integrantes extends StatelessWidget {
-  const integrantes({Key? key}) : super(key: key);
+class IntegrantesPage extends StatefulWidget {
+  const IntegrantesPage({Key? key}) : super(key: key);
 
   @override
+  State<IntegrantesPage> createState() => _IntegrantesPageState();
+}
+
+class _IntegrantesPageState extends State<IntegrantesPage> {
+  @override 
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('aca van los integrantes'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("integrantes"),
+      ),
     );
   }
-}
+} 

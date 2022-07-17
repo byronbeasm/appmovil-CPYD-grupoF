@@ -1,3 +1,4 @@
+import 'package:appcpyd/vistas/inicio.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'integrantes/integrantes.dart';
@@ -12,104 +13,53 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  PageController _pageController = PageController();
+  List<Widget> _screens = [InicioPage(), ScannerPage(), AsistenciaPage(), IntegrantesPage()];
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Likes',
-      style: optionStyle,
-    ),
-    Text(
-      'Search',
-      style: optionStyle,
-    ),
-    Text(
-      'Profile',
-      style: optionStyle,
-    ),
-  ];
+  void _onPageChanged(int index){
+    setState(() {
+      _selectedIndex = index; 
+    });
+  }
 
-  @override
+  void _onItemTapped(int selectIndex){
+    _pageController.jumpToPage(selectIndex);
+  }
+  @override 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 20,
-        title: const Text('GoogleNavBar'),
+      body: PageView(
+        controller: _pageController,
+        children: _screens,
+        onPageChanged: _onPageChanged,
+        physics: NeverScrollableScrollPhysics(),
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 20,
-              color: Colors.black.withOpacity(.1),
-            )
-          ],
-        ),
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
-            child: GNav(
-              rippleColor: Colors.grey[300]!,
-              hoverColor: Colors.grey[100]!,
-              gap: 8,
-              activeColor: Colors.black,
-              iconSize: 24,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-              duration: Duration(milliseconds: 400),
-              tabBackgroundColor: Colors.grey[100]!,
-              color: Colors.black,
-              tabs: [
-                GButton(
-                  icon: Icons.home,
-                  text: 'Home',
-                ),
-                GButton(
-                    icon: Icons.heart_broken,
-                    text: 'Likes',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => qr()),
-                      );
-                    }),
-                GButton(
-                    icon: Icons.search,
-                    text: 'Search',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => asistencia()),
-                      );
-                    }),
-                GButton(
-                    icon: Icons.person,
-                    text: 'Profile',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => integrantes()),
-                      );
-                    }),
-              ],
-              selectedIndex: _selectedIndex,
-              onTabChange: (index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-            ),
+      bottomNavigationBar: GNav(
+        backgroundColor: Colors.black,
+        color: Colors.white,
+        activeColor: Colors.white,
+        tabBackgroundColor: Colors.grey.shade800,
+        gap: 8,
+        padding: EdgeInsets.all(20),
+        onTabChange: _onItemTapped,
+        tabs: const [
+          GButton(
+            icon: Icons.home,
+            text: 'Inicio',
           ),
-        ),
+          GButton(
+            icon: Icons.qr_code,
+            text: 'Escanner QR',
+            ),
+          GButton(
+            icon: Icons.person,
+            text: 'Asistencia',
+            ),
+          GButton(
+            icon: Icons.group,
+            text: 'Integrantes',
+            ),
+        ],
       ),
     );
   }
