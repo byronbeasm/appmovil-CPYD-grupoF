@@ -12,9 +12,10 @@ class _InicioPageState extends State<InicioPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("inicio"),
+        backgroundColor: Colors.black,
+        title: Text("Inicio"),
       ),
-      body: Text('inicio'),
+      body: Text('inicio aaaaaa'),
     );
   }
 } 

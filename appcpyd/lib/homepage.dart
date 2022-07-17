@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
           ),
           GButton(
             icon: Icons.qr_code,
-            text: 'Escanner QR',
+            text: 'Lector QR',
             ),
           GButton(
             icon: Icons.person,

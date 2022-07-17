@@ -12,8 +12,9 @@ class _AsistenciaPageState extends State<AsistenciaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("asistencia"),
+        backgroundColor: Colors.black,
+        title: Text("Asistencia"),
       ),
-    );
+      );
   }
 } 

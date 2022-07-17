@@ -12,7 +12,8 @@ class _ScannerPageState extends State<ScannerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lector de ScannerPage'),
+        backgroundColor: Colors.black,
+        title: Text('Lector QR'),
       ),
       backgroundColor: Colors.white,
       body: SafeArea(
