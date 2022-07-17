@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'integrantes/integrantes.dart';
+import 'asistencia/asistencia.dart';
+import 'qr/qr.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -7,7 +10,6 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
@@ -32,7 +34,7 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -72,17 +74,32 @@ class _HomePageState extends State<HomePage> {
                   text: 'Home',
                 ),
                 GButton(
-                  icon: Icons.heart_broken,
-                  text: 'Likes',
-                ),
+                    icon: Icons.heart_broken,
+                    text: 'Likes',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => qr()),
+                      );
+                    }),
                 GButton(
-                  icon: Icons.search,
-                  text: 'Search',
-                ),
+                    icon: Icons.search,
+                    text: 'Search',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => asistencia()),
+                      );
+                    }),
                 GButton(
-                  icon: Icons.person,
-                  text: 'Profile',
-                ),
+                    icon: Icons.person,
+                    text: 'Profile',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => integrantes()),
+                      );
+                    }),
               ],
               selectedIndex: _selectedIndex,
               onTabChange: (index) {
