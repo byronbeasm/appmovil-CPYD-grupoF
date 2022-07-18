@@ -29,6 +29,18 @@ class _ScannerPageState extends State<ScannerPage> {
                   color: Colors.white,
                   size: 100,
                 ),
+                onTap: () => _scano(),
+              ),
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 155, vertical: 100),
+              child: GestureDetector(
+                child: Icon(
+                  Icons.qr_code_scanner_outlined,
+                  color: Colors.white,
+                  size: 100,
+                ),
                 onTap: () => _scan(),
               ),
             ),
@@ -39,6 +51,15 @@ class _ScannerPageState extends State<ScannerPage> {
   }
 
   Future _scan() async {
+    if (await Permission.camera.request().isGranted) {
+      // Permiso concedido
+      var barcode = await scaner.scan();
+    } else {
+      Text('No hay permisos de camara');
+    }
+  }
+
+  Future _scano() async {
     if (await Permission.camera.request().isGranted) {
       // Permiso concedido
       var barcode = await scaner.scan();
