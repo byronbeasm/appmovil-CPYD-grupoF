@@ -35,10 +35,10 @@ class _HomePageState extends State<HomePage> {
         physics: NeverScrollableScrollPhysics(),
       ),
       bottomNavigationBar: GNav(
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromARGB(255, 49, 71, 80),
         color: Colors.white,
         activeColor: Colors.white,
-        tabBackgroundColor: Colors.grey.shade800,
+        tabBackgroundColor: Color.fromARGB(255, 71, 110, 117),
         gap: 8,
         padding: EdgeInsets.all(20),
         onTabChange: _onItemTapped,

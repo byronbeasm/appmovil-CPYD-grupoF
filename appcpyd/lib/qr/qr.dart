@@ -11,21 +11,21 @@ class ScannerPage extends StatefulWidget {
 class _ScannerPageState extends State<ScannerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 16, 38, 46),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromARGB(255, 40, 184, 176),
         title: Text('Lector QR'),
       ),
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 55),
+              padding: const EdgeInsets.symmetric(horizontal: 155, vertical: 100),
               child: GestureDetector(
                 child: Icon(
-                  Icons.border_clear,
-                  color: Colors.green,
-                  size: 50,
+                  Icons.qr_code_scanner_outlined,
+                  color: Colors.white,
+                  size: 100,
                 ),
                 onTap: () => _scan(),
               ),

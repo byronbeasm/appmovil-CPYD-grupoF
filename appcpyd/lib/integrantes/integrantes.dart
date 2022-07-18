@@ -43,8 +43,9 @@ class _IntegrantesPageState extends State<IntegrantesPage> {
   @override 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 16, 38, 46),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromARGB(255, 40, 184, 176),
         title: Text("Integrantes"),
       ),
       body: ListView.builder(
