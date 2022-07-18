@@ -20,11 +20,13 @@ class pantalla_login extends GetWidget<logincontroller> {
                   //padding: const EdgeInsets.fromLTRB(20, 0, 20, 250),
                   //child:
                   Center(
-                    child: GoogleAuthButton(
-                      onPressed: () async {
-                        controller.loginapi();
-                        print(controller.url.value);
-                      },
+                    child: Center(
+                      child: GoogleAuthButton(
+                        onPressed: () async {
+                          controller.loginapi();
+                          print(controller.url.value);
+                        },
+                      ),
                     ),
                   )
                 ],

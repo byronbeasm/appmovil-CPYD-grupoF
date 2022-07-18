@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qrscan/qrscan.dart' as scaner;
+import 'package:permission_handler/permission_handler.dart';
 
 class ScannerPage extends StatefulWidget {
   const ScannerPage({Key? key}) : super(key: key);
@@ -20,7 +21,8 @@ class _ScannerPageState extends State<ScannerPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 155, vertical: 100),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 155, vertical: 100),
               child: GestureDetector(
                 child: Icon(
                   Icons.qr_code_scanner_outlined,
@@ -37,7 +39,11 @@ class _ScannerPageState extends State<ScannerPage> {
   }
 
   Future _scan() async {
-    var barcode = await scaner.scan();
+    if (await Permission.camera.request().isGranted) {
+      // Permiso concedido
+      var barcode = await scaner.scan();
+    } else {
+      Text('No hay permisos de camara');
+    }
   }
 }
-
