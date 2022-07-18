@@ -16,7 +16,16 @@ class _InicioPageState extends State<InicioPage> {
         backgroundColor: Color.fromARGB(255, 40, 184, 176),
         title: Text("Inicio"),
       ),
-      body: Text('inicio aaaaaa'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text('Bienvenido', style: TextStyle(color: Colors.white,  fontSize: 30)),
+            Text('Para ingresar a la sala escanee el codigo QR', style: TextStyle(color: Colors.white,  fontSize: 15)),
+            Text('Para salir de la sala escanee el codigo QR', style: TextStyle(color: Colors.white,  fontSize: 15)),
+          ],
+        )
+      )
     );
   }
 } 

@@ -22,7 +22,7 @@ class _ScannerPageState extends State<ScannerPage> {
           children: [
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 155, vertical: 100),
+                  const EdgeInsets.symmetric(horizontal: 150, vertical: 100),
               child: GestureDetector(
                 child: Icon(
                   Icons.qr_code_scanner_outlined,
@@ -34,7 +34,7 @@ class _ScannerPageState extends State<ScannerPage> {
             ),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 155, vertical: 100),
+                  const EdgeInsets.symmetric(horizontal: 150, vertical: 100),
               child: GestureDetector(
                 child: Icon(
                   Icons.qr_code_scanner_outlined,
